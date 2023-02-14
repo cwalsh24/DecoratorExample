@@ -48,7 +48,7 @@ namespace DecoratorPractice
         }
         public void draw()
         {
-
+            Console.WriteLine("This is a Border Decorator holding a...."); 
         }
     }
 
@@ -60,7 +60,7 @@ namespace DecoratorPractice
         }
         public void draw()
         {
-
+            Console.WriteLine("This is a Scroll Decorator holding a....");
         }
     }
 
