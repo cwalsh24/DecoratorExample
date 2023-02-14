@@ -14,13 +14,13 @@ namespace DecoratorPractice
     public abstract class Decorator : Widget
     {
         Widget wid;
-        Decorator(Widget w)
+        public Decorator(Widget w)
         {
-            w = wid;
+            wid = w;
         }
         public void draw()
         {
-
+            wid.draw();
         }
     }
 
@@ -40,9 +40,9 @@ namespace DecoratorPractice
 
     }
 
-    public class BorderDecorator : Widget
+    public class BorderDecorator : Decorator
     {
-        public BorderDecorator(Widget w)
+        public BorderDecorator(Widget w) : base(w)
         {
 
         }
@@ -52,9 +52,9 @@ namespace DecoratorPractice
         }
     }
 
-    public class ScrollDecorator : Widget
+    public class ScrollDecorator : Decorator
     {
-        public ScrollDecorator(Widget w)
+        public ScrollDecorator(Widget w) : base(w)
         {
 
         }
