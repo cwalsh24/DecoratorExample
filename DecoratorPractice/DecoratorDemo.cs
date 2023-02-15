@@ -48,7 +48,7 @@ namespace DecoratorPractice
         }
         public void draw()
         {
-            Console.WriteLine("This is a Border Decorator holding a...."); 
+            Console.WriteLine("This is a Border Decorator holding an orange border"); 
         }
     }
 
@@ -60,7 +60,20 @@ namespace DecoratorPractice
         }
         public void draw()
         {
-            Console.WriteLine("This is a Scroll Decorator holding a....");
+            Console.WriteLine("This is a Scroll Decorator holding a scroll graphic");
+        }
+    }
+
+    public class BackgroundDecorator : Decorator
+    {
+        public BackgroundDecorator(Widget w) : base(w)
+        {
+
+        }
+        public void draw()
+        {
+            //base(w).draw()? 
+            Console.WriteLine("This is a Background Decorator holding a blue background");
         }
     }
 
@@ -68,7 +81,14 @@ namespace DecoratorPractice
     {
         static void Main(string[] args)
         {
-
+            TextField text = new TextField(10, 10);
+            ScrollDecorator scroll = new ScrollDecorator(text);
+            BorderDecorator border = new BorderDecorator(text);
+            BackgroundDecorator background = new BackgroundDecorator(text);
+            scroll.draw();
+            border.draw();
+            background.draw();
+            Console.ReadKey();
         }
     }
 }
