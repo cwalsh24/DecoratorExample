@@ -48,6 +48,7 @@ namespace DecoratorPractice
         }
         public override void draw()
         {
+            base.draw();
             Console.WriteLine("This is a Border Decorator holding an orange border"); 
         }
     }
@@ -60,6 +61,7 @@ namespace DecoratorPractice
         }
         public override void draw()
         {
+            base.draw();
             Console.WriteLine("This is a Scroll Decorator holding a scroll graphic");
         }
     }
@@ -70,9 +72,9 @@ namespace DecoratorPractice
         {
 
         }
-        public void draw()
+        public override void draw()
         {
-            //base(w).draw()? 
+            base.draw();
             Console.WriteLine("This is a Background Decorator holding a blue background");
         }
     }
@@ -83,10 +85,8 @@ namespace DecoratorPractice
         {
             TextField text = new TextField(10, 10);
             ScrollDecorator scroll = new ScrollDecorator(text);
-            BorderDecorator border = new BorderDecorator(text);
-            BackgroundDecorator background = new BackgroundDecorator(text);
-            scroll.draw();
-            border.draw();
+            BorderDecorator border = new BorderDecorator(scroll);
+            BackgroundDecorator background = new BackgroundDecorator(border);
             background.draw();
             Console.ReadKey();
         }
