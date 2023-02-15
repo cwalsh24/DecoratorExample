@@ -1,4 +1,15 @@
-﻿using System;
+﻿/**
+ * @file DecoratorDemo.cs
+ * @author Connor Walsh
+ * @date 2023-2-15
+ * @brief decorator pattern driver
+ * 
+ * This is the driver for the DecoratorPractice program. It contains a main method that tests the functionality 
+ * of the decorator classes.
+ */
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,80 +17,7 @@ using System.Threading.Tasks;
 
 namespace DecoratorPractice
 {
-    public interface Widget
-    {
-        void draw();
-    }
-
-    public abstract class Decorator : Widget
-    {
-        Widget wid;
-        public Decorator(Widget w)
-        {
-            wid = w;
-        }
-        public virtual void draw()
-        {
-            wid.draw();
-        }
-    }
-
-    public class TextField : Widget
-    {
-        int width;
-        int height;
-        public TextField(int w, int h) 
-        {
-            w = width;
-            h = height;
-        }
-        public void draw()
-        {
-
-        }
-
-    }
-
-    public class BorderDecorator : Decorator
-    {
-        public BorderDecorator(Widget w) : base(w)
-        {
-
-        }
-        public override void draw()
-        {
-            base.draw();
-            Console.WriteLine("This is a Border Decorator holding an orange border"); 
-        }
-    }
-
-    public class ScrollDecorator : Decorator
-    {
-        public ScrollDecorator(Widget w) : base(w)
-        {
-
-        }
-        public override void draw()
-        {
-            base.draw();
-            Console.WriteLine("This is a Scroll Decorator holding a scroll graphic");
-        }
-    }
-
-    public class BackgroundDecorator : Decorator
-    {
-        public BackgroundDecorator(Widget w) : base(w)
-        {
-
-        }
-        public override void draw()
-        {
-            base.draw();
-            Console.WriteLine("This is a Background Decorator holding a blue background");
-        }
-    }
-
-    internal class DecoratorDemo
+    public class DecoratorDemo
     {
         static void Main(string[] args)
         {
