@@ -18,7 +18,7 @@ namespace DecoratorPractice
         {
             wid = w;
         }
-        public void draw()
+        public virtual void draw()
         {
             wid.draw();
         }
@@ -46,7 +46,7 @@ namespace DecoratorPractice
         {
 
         }
-        public void draw()
+        public override void draw()
         {
             Console.WriteLine("This is a Border Decorator holding an orange border"); 
         }
@@ -58,7 +58,7 @@ namespace DecoratorPractice
         {
 
         }
-        public void draw()
+        public override void draw()
         {
             Console.WriteLine("This is a Scroll Decorator holding a scroll graphic");
         }
